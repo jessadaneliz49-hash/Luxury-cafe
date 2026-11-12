@@ -227,6 +227,90 @@ footer {
 </style>
 </head>
 
+<script>
+let cart = [];
+
+function addOrder(name, price, inputId) {
+  let quantity = parseInt(document.getElementById(inputId).value);
+
+  if (!quantity || quantity < 1) {
+    alert("Please enter a valid quantity.");
+    return;
+  }
+
+  let existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.quantity += quantity;
+  } else {
+    cart.push({name, price, quantity});
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+  let list = document.getElementById("orderList");
+  let total = 0;
+
+  if (cart.length === 0) {
+    list.innerHTML = "Your cart is empty.";
+  } else {
+    list.innerHTML = cart.map((item, index) => {
+      let subtotal = item.price * item.quantity;
+      total += subtotal;
+
+      return `
+        <div style="border-bottom:1px solid #66513c;padding:10px;">
+          ${item.name} × ${item.quantity}
+          <br>₱${subtotal}
+          <br>
+          <button onclick="removeOrder(${index})">
+            Remove
+          </button>
+        </div>
+      `;
+    }).join("");
+  }
+
+  document.getElementById("total").innerText =
+    "Total: ₱" + total.toLocaleString("en-PH");
+}
+
+function removeOrder(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function placeOrder() {
+  if (cart.length === 0) {
+    alert("Please add an item to your order.");
+    return;
+  }
+
+  let message = "Hello Maison Café! I would like to order:\n\n";
+  let total = 0;
+
+  cart.forEach(item => {
+    let subtotal = item.price * item.quantity;
+    message += item.name + " x " + item.quantity +
+      " = ₱" + subtotal + "\n";
+    total += subtotal;
+  });
+
+  message += "\nTotal: ₱" + total;
+
+  // Replace with the actual business WhatsApp number.
+  let whatsappNumber = "639XXXXXXXXX";
+
+  window.open(
+    "https://wa.me/" + whatsappNumber +
+    "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
+
 <body>
 
 <header>
@@ -278,11 +362,13 @@ PORTFOLIO DEMO WEBSITE
 
 
 
+
+
 <section id="menu">
   <div class="section-title">
     <p>OUR SIGNATURE SELECTION</p>
     <h2>Explore Our Menu</h2>
-    <p>Handcrafted with love, served with elegance.</p>
+    <p>Choose your favorites and enjoy every sip.</p>
   </div>
 
   <div class="menu-grid">
@@ -292,7 +378,8 @@ PORTFOLIO DEMO WEBSITE
       <h3>Classic Espresso</h3>
       <p>Rich and Bold</p>
       <h3>₱120</h3>
-      <a class="btn" href="https://wa.me/639XXXXXXXXX?text=I%20want%20to%20order%20Classic%20Espresso">ORDER NOW</a>
+      <input type="number" min="1" value="1" id="qty1" style="width:65px;padding:10px;margin:10px">
+      <button class="btn" onclick="addOrder('Classic Espresso',120,'qty1')">ADD TO ORDER</button>
     </div>
 
     <div class="menu-card">
@@ -300,7 +387,8 @@ PORTFOLIO DEMO WEBSITE
       <h3>Signature Iced Latte</h3>
       <p>Smooth and Creamy</p>
       <h3>₱160</h3>
-      <a class="btn" href="https://wa.me/639XXXXXXXXX?text=I%20want%20to%20order%20Iced%20Latte">ORDER NOW</a>
+      <input type="number" min="1" value="1" id="qty2" style="width:65px;padding:10px;margin:10px">
+      <button class="btn" onclick="addOrder('Signature Iced Latte',160,'qty2')">ADD TO ORDER</button>
     </div>
 
     <div class="menu-card">
@@ -308,11 +396,30 @@ PORTFOLIO DEMO WEBSITE
       <h3>Velvet Cappuccino</h3>
       <p>Elegant and Comforting</p>
       <h3>₱150</h3>
-      <a class="btn" href="https://wa.me/639XXXXXXXXX?text=I%20want%20to%20order%20Cappuccino">ORDER NOW</a>
+      <input type="number" min="1" value="1" id="qty3" style="width:65px;padding:10px;margin:10px">
+      <button class="btn" onclick="addOrder('Velvet Cappuccino',150,'qty3')">ADD TO ORDER</button>
     </div>
 
   </div>
+
+  <div style="max-width:600px;margin:45px auto;background:#21170f;color:white;padding:30px;text-align:center;">
+    <h2>Your Order</h2>
+    <div id="orderList" style="margin:20px 0;line-height:2;">
+      Your cart is empty.
+    </div>
+    <h3 id="total">Total: ₱0</h3>
+    <button class="btn" onclick="placeOrder()" style="margin-top:20px;border:0;cursor:pointer;">
+      PLACE MY ORDER
+    </button>
+    <p style="font-size:11px;margin-top:15px;color:#d9c7ad;">
+      Demo ordering system. Prices are sample prices.
+    </p>
+  </div>
 </section>
+
+
+  
+
 
 
 <section class="banner">
