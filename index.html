@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Café | Premium Coffee Experience</title>
+<meta name="description" content="Discover exceptional coffee, handcrafted drinks and elegant moments at Maison Café.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, serif;
+  background: #f8f5ef;
+  color: #292019;
+}
+
+header {
+  background: #21170f;
+  color: #fffaf1;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: #fffaf1;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+.hero {
+  min-height: 570px;
+  background: linear-gradient(
+    rgba(20,14,10,.55),
+    rgba(20,14,10,.55)
+  ), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1600')
+  center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero-content { max-width: 700px; }
+
+.hero p {
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  font-weight: normal;
+  margin-bottom: 22px;
+}
+
+.hero h2 {
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  background: #c6a477;
+  color: #21170f;
+  padding: 15px 30px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+section { padding: 85px 8%; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title p {
+  color: #a17b4f;
+  letter-spacing: 3px;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.section-title h2 {
+  font-size: 37px;
+  font-weight: normal;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.about img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+}
+
+.about h2 {
+  font-size: 38px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: #71665c;
+  line-height: 1.9;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.menu-card {
+  background: white;
+  padding-bottom: 22px;
+  text-align: center;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.menu-card h3 {
+  font-size: 21px;
+  font-weight: normal;
+  margin: 18px 0 8px;
+}
+
+.menu-card p {
+  color: #a17b4f;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.banner {
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    rgba(30,20,12,.65),
+    rgba(30,20,12,.65)
+  ), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1500') center/cover;
+  padding: 110px 20px;
+}
+
+.banner h2 {
+  font-size: 42px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  margin-bottom: 28px;
+}
+
+.contact {
+  text-align: center;
+  line-height: 2.2;
+}
+
+.contact p {
+  font-family: Arial, sans-serif;
+  color: #71665c;
+  font-size: 14px;
+}
+
+footer {
+  background: #21170f;
+  color: #d9c7ad;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  nav a {
+    margin: 0 7px;
+    font-size: 11px;
+  }
+
+  .hero { min-height: 490px; }
+
+  .about { grid-template-columns: 1fr; }
+
+  .menu-grid { grid-template-columns: 1fr; }
+
+  section { padding: 65px 7%; }
+
+  .about img { height: 280px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MAISON CAFÉ</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p>AN ELEVATED COFFEE EXPERIENCE</p>
+    <h1>MAISON CAFÉ</h1>
+    <h2>Where Every Cup Tells a Story.</h2>
+    <a href="#menu" class="btn">EXPLORE OUR MENU</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1000" alt="Elegant coffee shop interior">
+  <div>
+    <div class="section-title" style="text-align:left">
+      <p>OUR STORY</p>
+    </div>
+    <h2>A Place to Slow Down.</h2>
+    <p>
+      At Maison Café, we believe coffee is more than
+      a drink. It is a moment of comfort, connection,
+      and inspiration. Every cup is thoughtfully
+      prepared using carefully selected ingredients
+      and a passion for exceptional coffee.
+    </p>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="section-title">
+    <p>OUR SIGNATURE SELECTION</p>
+    <h2>Crafted With Passion</h2>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700" alt="Espresso coffee">
+      <h3>Classic Espresso</h3>
+      <p>Rich & Bold</p>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700" alt="Iced latte">
+      <h3>Signature Iced Latte</h3>
+      <p>Smooth & Creamy</p>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=700" alt="Cappuccino">
+      <h3>Velvet Cappuccino</h3>
+      <p>Elegant & Comforting</p>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <h2>Make Every Moment Special.</h2>
+  <p>Your next favorite coffee is waiting for you.</p>
+  <a href="#contact" class="btn">VISIT US</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-title">
+    <p>COME SAY HELLO</p>
+    <h2>Visit Maison Café</h2>
+  </div>
+  <p>📍 Your Business Address, Philippines</p>
+  <p>📞 +63 900 000 0000</p>
+  <p>✉️ hello@maisoncafe.com</p>
+  <p>Monday – Sunday | 8:00 AM – 9:00 PM</p>
+</section>
+</main>
+
+<footer>
+  © 2026 MAISON CAFÉ. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
