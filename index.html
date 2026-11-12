@@ -282,33 +282,57 @@ function removeOrder(index) {
   updateCart();
 }
 
+
 function placeOrder() {
   if (cart.length === 0) {
     alert("Please add an item to your order.");
     return;
   }
 
-  let message = "Hello Maison Café! I would like to order:\n\n";
+  document.getElementById("checkout").style.display = "block";
+
+  document.getElementById("checkout").scrollIntoView({
+    behavior: "smooth"
+  });
+
+  let summary = "";
   let total = 0;
 
   cart.forEach(item => {
     let subtotal = item.price * item.quantity;
-    message += item.name + " x " + item.quantity +
-      " = ₱" + subtotal + "\n";
+    summary += item.name + " x " + item.quantity +
+      " = ₱" + subtotal.toLocaleString("en-PH") + "\n";
     total += subtotal;
   });
 
-  message += "\nTotal: ₱" + total;
-
-  // Replace with the actual business WhatsApp number.
-  let whatsappNumber = "639XXXXXXXXX";
-
-  window.open(
-    "https://wa.me/" + whatsappNumber +
-    "?text=" + encodeURIComponent(message),
-    "_blank"
-  );
+  document.getElementById("checkoutSummary").innerText = summary;
+  document.getElementById("checkoutTotal").innerText =
+    "Total: ₱" + total.toLocaleString("en-PH");
 }
+
+function submitDemoOrder() {
+  let name = document.getElementById("customerName").value.trim();
+  let phone = document.getElementById("customerPhone").value.trim();
+  let address = document.getElementById("customerAddress").value.trim();
+
+  if (!name || !phone || !address) {
+    alert("Please complete all customer details.");
+    return;
+  }
+
+  alert("Thank you, " + name +
+    "! Your demo order has been successfully submitted.");
+
+  cart = [];
+  updateCart();
+
+  document.getElementById("customerName").value = "";
+  document.getElementById("customerPhone").value = "";
+  document.getElementById("customerAddress").value = "";
+
+  document.getElementById("checkout").style.display = "none";
+}
+
 </script>
 
 <body>
@@ -420,6 +444,41 @@ PORTFOLIO DEMO WEBSITE
 
   
 
+
+<section id="checkout" style="display:none; background:#f8f5ef;">
+  <div class="section-title">
+    <p>COMPLETE YOUR ORDER</p>
+    <h2>Customer Checkout</h2>
+  </div>
+
+  <div style="max-width:550px;margin:auto;background:white;padding:30px;">
+    <h3>Your Order Summary</h3>
+    <pre id="checkoutSummary" style="white-space:pre-wrap;margin:20px 0;"></pre>
+    <h3 id="checkoutTotal">Total: ₱0</h3>
+
+    <form onsubmit="event.preventDefault(); submitDemoOrder();">
+      <label>Customer Name</label>
+      <input id="customerName" type="text" required
+        placeholder="Enter your name"
+        style="width:100%;padding:13px;margin:10px 0 20px;">
+
+      <label>Contact Number</label>
+      <input id="customerPhone" type="tel" required
+        placeholder="09XXXXXXXXX"
+        style="width:100%;padding:13px;margin:10px 0 20px;">
+
+      <label>Delivery Address</label>
+      <textarea id="customerAddress" required
+        placeholder="Enter your complete address"
+        style="width:100%;padding:13px;margin:10px 0 20px;"></textarea>
+
+      <button type="submit" class="btn"
+        style="width:100%;border:0;cursor:pointer;">
+        SUBMIT DEMO ORDER
+      </button>
+    </form>
+  </div>
+</section>
 
 
 <section class="banner">
