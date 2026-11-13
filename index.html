@@ -8,336 +8,265 @@
 <meta name="description" content="Discover exceptional coffee, handcrafted drinks and elegant moments at Maison Café.">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: Georgia, serif;
-  background: #f8f5ef;
-  color: #292019;
-}
-
-header {
-  background: #21170f;
-  color: #fffaf1;
-  padding: 22px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 23px;
-  letter-spacing: 3px;
-}
-
-nav a {
-  color: #fffaf1;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 13px;
-}
-
-.hero {
-  min-height: 570px;
-  background: linear-gradient(
-    rgba(20,14,10,.55),
-    rgba(20,14,10,.55)
-  ), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1600')
-  center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 40px 20px;
-}
-
-.hero-content { max-width: 700px; }
-
-.hero p {
-  letter-spacing: 5px;
-  font-size: 12px;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 8vw, 76px);
-  font-weight: normal;
-  margin-bottom: 22px;
-}
-
-.hero h2 {
-  font-size: 17px;
-  font-weight: normal;
-  margin-bottom: 32px;
-}
-
-.btn {
-  display: inline-block;
-  background: #c6a477;
-  color: #21170f;
-  padding: 15px 30px;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-size: 12px;
-}
-
-section { padding: 85px 8%; }
-
-.section-title {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.section-title p {
-  color: #a17b4f;
-  letter-spacing: 3px;
-  font-size: 11px;
-  margin-bottom: 12px;
-}
-
-.section-title h2 {
-  font-size: 37px;
-  font-weight: normal;
-}
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 55px;
-}
-
-.about img {
-  width: 100%;
-  height: 390px;
-  object-fit: cover;
-}
-
-.about h2 {
-  font-size: 38px;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.about p {
-  color: #71665c;
-  line-height: 1.9;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.menu-card {
-  background: white;
-  padding-bottom: 22px;
-  text-align: center;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.menu-card h3 {
-  font-size: 21px;
-  font-weight: normal;
-  margin: 18px 0 8px;
-}
-
-.menu-card p {
-  color: #a17b4f;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-.banner {
-  text-align: center;
-  color: white;
-  background: linear-gradient(
-    rgba(30,20,12,.65),
-    rgba(30,20,12,.65)
-  ), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1500') center/cover;
-  padding: 110px 20px;
-}
-
-.banner h2 {
-  font-size: 42px;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.banner p {
-  margin-bottom: 28px;
-}
-
-.contact {
-  text-align: center;
-  line-height: 2.2;
-}
-
-.contact p {
-  font-family: Arial, sans-serif;
-  color: #71665c;
-  font-size: 14px;
-}
-
-footer {
-  background: #21170f;
-  color: #d9c7ad;
-  text-align: center;
-  padding: 30px 15px;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    gap: 14px;
-    padding: 18px 5%;
-  }
-
-  .logo {
-    font-size: 21px;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  nav a {
-    margin: 0;
-    font-size: 12px;
-    padding: 6px 2px;
-  }
-
-  .hero {
-    min-height: 460px;
-    padding: 35px 18px;
-  }
-
-  .hero h1 {
-    font-size: clamp(38px, 11vw, 58px);
-  }
-
-  .hero h2 {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  section {
-    padding: 55px 6%;
-  }
-
-  .about {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .about img {
-    height: 260px;
-  }
-
-  .about h2 {
-    font-size: 32px;
-  }
-
-  .section-title h2 {
-    font-size: 30px;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .menu-card {
-    overflow: hidden;
-    padding-bottom: 24px;
-    border-radius: 8px;
-  }
-
-  .menu-card img {
-    height: 230px;
-  }
-
-  .banner {
-    padding: 75px 20px;
-  }
-
-  .banner h2 {
-    font-size: 32px;
-    line-height: 1.3;
-  }
-
-  .contact {
-    overflow-wrap: anywhere;
-  }
-
-  #checkout > div {
-    padding: 22px !important;
-  }
-
-  #checkout input,
-  #checkout textarea {
-    width: 100%;
-    max-width: 100%;
-    font-size: 16px;
-  }
-
-  #checkout button {
-    min-height: 48px;
-  }
-}
-
-
-  nav a {
-    margin: 0 7px;
-    font-size: 11px;
-  }
-
-  .hero { min-height: 490px; }
-
-  .about { grid-template-columns: 1fr; }
-
-  .menu-grid { grid-template-columns: 1fr; }
-
-  section { padding: 65px 7%; }
-
-  .about img { height: 280px; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,serif;background:#f8f5ef;color:#292019}
+header{background:#21170f;color:#fffaf1;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;letter-spacing:3px}
+nav a{color:#fffaf1;text-decoration:none;margin-left:20px;font-size:13px}
+.hero{min-height:570px;background:linear-gradient(rgba(20,14,10,.55),rgba(20,14,10,.55)),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1600') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:40px 20px}
+.hero-content{max-width:700px}
+.hero p{letter-spacing:5px;font-size:12px;margin-bottom:20px}
+.hero h1{font-size:clamp(42px,8vw,76px);font-weight:normal;margin-bottom:22px}
+.hero h2{font-size:17px;font-weight:normal;margin-bottom:32px}
+.btn{display:inline-block;background:#c6a477;color:#21170f;padding:15px 30px;text-decoration:none;letter-spacing:1px;font-size:12px;cursor:pointer;border:0}
+section{padding:85px 8%}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title p{color:#a17b4f;letter-spacing:3px;font-size:11px;margin-bottom:12px}
+.section-title h2{font-size:37px;font-weight:normal}
+.about{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
+.about img{width:100%;height:390px;object-fit:cover}
+.about h2{font-size:38px;font-weight:normal;margin-bottom:20px}
+.about p{color:#71665c;line-height:1.9;font-family:Arial,sans-serif;font-size:14px}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.menu-card{background:white;padding-bottom:22px;text-align:center}
+.menu-card img{width:100%;height:220px;object-fit:cover}
+.menu-card h3{font-size:21px;font-weight:normal;margin:18px 0 8px}
+.menu-card p{color:#a17b4f;font-family:Arial,sans-serif;font-size:14px}
+.banner{text-align:center;color:white;background:linear-gradient(rgba(30,20,12,.65),rgba(30,20,12,.65)),url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1500') center/cover;padding:110px 20px}
+.banner h2{font-size:42px;font-weight:normal;margin-bottom:20px}
+.banner p{margin-bottom:28px}
+.contact{text-align:center;line-height:2.2}
+.contact p{font-family:Arial,sans-serif;color:#71665c;font-size:14px}
+footer{background:#21170f;color:#d9c7ad;text-align:center;padding:30px 15px;font-size:12px;letter-spacing:1px}
+footer a{color:#d9c7ad;text-decoration:none}
+.checkout-box{max-width:600px;margin:auto;background:white;padding:30px}
+.field{margin:15px 0}
+.field label{display:block;margin-bottom:8px;font-size:14px}
+.field input,.field select,.field textarea{width:100%;padding:13px;font-size:15px;border:1px solid #d8cabb;border-radius:3px}
+#gcashBox{display:none;margin:20px 0;padding:20px;background:#f8f5ef;text-align:center}
+#gcashBox img{width:100%;max-width:270px;height:auto;object-fit:contain;margin:15px auto}
+#receiptPreview{display:none;width:100%;max-width:300px;margin:15px auto;border:1px solid #ddd}
+@media(max-width:700px){
+header{flex-direction:column;gap:14px;padding:18px 5%}
+.logo{font-size:21px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+nav a{margin:0;font-size:12px;padding:6px 2px}
+.hero{min-height:460px;padding:35px 18px}
+.hero h1{font-size:clamp(38px,11vw,58px)}
+section{padding:55px 6%}
+.about{grid-template-columns:1fr;gap:28px}
+.about img{height:260px}
+.about h2{font-size:32px}
+.section-title h2{font-size:30px}
+.menu-grid{grid-template-columns:1fr;gap:22px}
+.menu-card img{height:230px}
+.banner{padding:75px 20px}
+.banner h2{font-size:32px}
+.checkout-box{padding:22px}
 }
 </style>
 </head>
+<body>
+
+<header>
+<div class="logo">MAISON CAFÉ</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-content">
+<p>AN ELEVATED COFFEE EXPERIENCE</p>
+<h1>MAISON CAFÉ</h1>
+<h2>Where Every Cup Tells a Story.</h2>
+<a href="#menu" class="btn">EXPLORE OUR MENU</a>
+</div>
+</section>
+
+<section class="about" id="about">
+<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1000" alt="Coffee shop interior">
+<div>
+<div class="section-title" style="text-align:left"><p>OUR STORY</p></div>
+<h2>A Place to Slow Down.</h2>
+<p>At Maison Café, we believe coffee is more than a drink. It is a moment of comfort, connection, and inspiration. Every cup is thoughtfully prepared using carefully selected ingredients and a passion for exceptional coffee.</p>
+</div>
+</section>
+
+<section id="menu">
+<div class="section-title">
+<p>OUR SIGNATURE SELECTION</p>
+<h2>Explore Our Menu</h2>
+<p>Choose your favorites and enjoy every sip.</p>
+</div>
+<div class="menu-grid">
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700" alt="Espresso">
+<h3>Classic Espresso</h3><p>Rich and Bold</p><h3>₱120</h3>
+<input type="number" min="1" value="1" id="qty1" style="width:65px;padding:10px;margin:10px">
+<button class="btn" onclick="addOrder('Classic Espresso',120,'qty1')">ADD TO ORDER</button>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700" alt="Iced Latte">
+<h3>Signature Iced Latte</h3><p>Smooth and Creamy</p><h3>₱160</h3>
+<input type="number" min="1" value="1" id="qty2" style="width:65px;padding:10px;margin:10px">
+<button class="btn" onclick="addOrder('Signature Iced Latte',160,'qty2')">ADD TO ORDER</button>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=700" alt="Cappuccino">
+<h3>Velvet Cappuccino</h3><p>Elegant and Comforting</p><h3>₱150</h3>
+<input type="number" min="1" value="1" id="qty3" style="width:65px;padding:10px;margin:10px">
+<button class="btn" onclick="addOrder('Velvet Cappuccino',150,'qty3')">ADD TO ORDER</button>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=700" alt="Matcha Latte">
+<h3>Iced Matcha Latte</h3><p>Creamy Japanese Matcha</p><h3>₱170</h3>
+<input type="number" min="1" value="1" id="qty4" style="width:65px;padding:10px;margin:10px">
+<button class="btn" onclick="addOrder('Iced Matcha Latte',170,'qty4')">ADD TO ORDER</button>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700" alt="Spanish Latte">
+<h3>Spanish Latte</h3><p>Rich Espresso and Sweet Milk</p><h3>₱180</h3>
+<input type="number" min="1" value="1" id="qty5" style="width:65px;padding:10px;margin:10px">
+<button class="btn" onclick="addOrder('Spanish Latte',180,'qty5')">ADD TO ORDER</button>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700" alt="Croissant">
+<h3>Butter Croissant</h3><p>Flaky and Buttery Pastry</p><h3>₱95</h3>
+<input type="number" min="1" value="1" id="qty6" style="width:65px;padding:10px;margin:10px">
+<button class="btn" onclick="addOrder('Butter Croissant',95,'qty6')">ADD TO ORDER</button>
+</div>
+
+</div>
+
+<div style="max-width:600px;margin:45px auto;background:#21170f;color:white;padding:30px;text-align:center">
+<h2>Your Order</h2>
+<div id="orderList" style="margin:20px 0;line-height:2">Your cart is empty.</div>
+<h3 id="total">Total: ₱0</h3>
+<button class="btn" onclick="placeOrder()" style="margin-top:20px">PLACE MY ORDER</button>
+</div>
+</section>
+
+<section id="checkout" style="display:none;background:#f8f5ef">
+<div class="section-title">
+<p>COMPLETE YOUR ORDER</p>
+<h2>Customer Checkout</h2>
+</div>
+<div class="checkout-box">
+<h3>Your Order Summary</h3>
+<pre id="checkoutSummary" style="white-space:pre-wrap;margin:20px 0;font-family:Arial"></pre>
+<h3 id="checkoutTotal">Total: ₱0</h3>
+
+<form id="checkoutForm" onsubmit="event.preventDefault();submitOrder()">
+<div class="field">
+<label>Customer Name</label>
+<input id="customerName" type="text" required placeholder="Enter your full name">
+</div>
+<div class="field">
+<label>Contact Number</label>
+<input id="customerPhone" type="tel" required placeholder="09XXXXXXXXX">
+</div>
+<div class="field">
+<label>Order Type</label>
+<select id="orderType" onchange="changeOrderType()">
+<option value="Delivery">Delivery</option>
+<option value="Pick Up">Pick Up</option>
+</select>
+</div>
+
+<div id="deliveryFields">
+<div class="field">
+<label>Delivery Address</label>
+<textarea id="customerAddress" rows="3" placeholder="Enter your complete address"></textarea>
+</div>
+<div class="field">
+<label>Choose Your Rider</label>
+<select id="rider">
+<option value="Grab">Grab</option>
+<option value="Foodpanda">Foodpanda</option>
+</select>
+</div>
+<p style="margin:15px 0;color:#a17b4f">Delivery Fee: <strong>₱70</strong></p>
+</div>
+
+<div id="pickupMessage" style="display:none;margin:15px 0;color:#a17b4f">
+Pick Up selected. No delivery fee.
+</div>
+
+<div class="field">
+<label>Payment Method</label>
+<select id="paymentMethod" onchange="changePayment()">
+<option value="GCash">GCash</option>
+</select>
+</div>
+
+<div id="gcashBox">
+<h3>Pay via GCash</h3>
+<p>Scan this QR code to pay.</p>
+<img src="https://raw.githubusercontent.com/jessadaneliz49-hash/Luxury-cafe/main/GCash-MyQR-13112026203249.PNG.jpg" alt="Maison Café GCash QR Code">
+<p>Upload your payment screenshot below.</p>
+</div>
+
+<div class="field">
+<label>Upload Payment Screenshot</label>
+<input type="file" id="paymentReceipt" accept="image/*" onchange="previewReceipt()" required>
+<img id="receiptPreview" alt="Payment screenshot preview">
+<p style="font-size:11px;color:#71665c;margin-top:8px">Receipt preview only. It will not be saved or sent until a database is connected.</p>
+</div>
+
+<button type="submit" class="btn" style="width:100%">PREPARE MY ORDER</button>
+</form>
+</div>
+</section>
+
+<section class="banner">
+<h2>Make Every Moment Special.</h2>
+<p>Your next favorite coffee is waiting for you.</p>
+<a href="#contact" class="btn">VISIT US</a>
+</section>
+
+<section class="contact" id="contact">
+<div class="section-title"><p>COME SAY HELLO</p><h2>Visit Maison Café</h2></div>
+<p>📍 Davao City, Philippines</p>
+<p>📞 +63 900 000 0000</p>
+<p>✉️ hello@maisoncafe.com</p>
+<p>Monday – Sunday | 8:00 AM – 9:00 PM</p>
+</section>
+</main>
+
+<footer>
+<h3>MAISON CAFÉ</h3>
+<p>Where Every Cup Tells a Story.</p>
+<p>© 2026 Maison Café. All Rights Reserved.</p>
+</footer>
 
 <script>
 let cart = [];
 
-function addOrder(name, price, inputId) {
-  let quantity = parseInt(document.getElementById(inputId).value);
+function peso(amount) {
+  return "₱" + amount.toLocaleString("en-PH");
+}
 
-  if (!quantity || quantity < 1) {
+function addOrder(name, price, inputId) {
+  const quantity = parseInt(document.getElementById(inputId).value);
+
+  if (!Number.isInteger(quantity) || quantity < 1) {
     alert("Please enter a valid quantity.");
     return;
   }
 
-  let existing = cart.find(item => item.name === name);
+  const existing = cart.find(item => item.name === name);
 
   if (existing) {
     existing.quantity += quantity;
@@ -349,31 +278,27 @@ function addOrder(name, price, inputId) {
 }
 
 function updateCart() {
-  let list = document.getElementById("orderList");
+  const list = document.getElementById("orderList");
   let total = 0;
 
-  if (cart.length === 0) {
+  if (!cart.length) {
     list.innerHTML = "Your cart is empty.";
   } else {
     list.innerHTML = cart.map((item, index) => {
-      let subtotal = item.price * item.quantity;
+      const subtotal = item.price * item.quantity;
       total += subtotal;
 
       return `
-        <div style="border-bottom:1px solid #66513c;padding:10px;">
+        <div style="border-bottom:1px solid #66513c;padding:10px">
           ${item.name} × ${item.quantity}
-          <br>₱${subtotal}
-          <br>
-          <button onclick="removeOrder(${index})">
-            Remove
-          </button>
+          <br>${peso(subtotal)}
+          <br><button onclick="removeOrder(${index})">Remove</button>
         </div>
       `;
     }).join("");
   }
 
-  document.getElementById("total").innerText =
-    "Total: ₱" + total.toLocaleString("en-PH");
+  document.getElementById("total").innerText = "Total: " + peso(total);
 }
 
 function removeOrder(index) {
@@ -381,331 +306,146 @@ function removeOrder(index) {
   updateCart();
 }
 
+function getSubtotal() {
+  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+}
+
+function getDeliveryFee() {
+  return document.getElementById("orderType").value === "Delivery" ? 70 : 0;
+}
 
 function placeOrder() {
-  if (cart.length === 0) {
-    alert("Please add an item to your order.");
+  if (!cart.length) {
+    alert("Please add an item to your order first.");
     return;
   }
 
   document.getElementById("checkout").style.display = "block";
+  changeOrderType();
+  changePayment();
+  updateSummary();
 
   document.getElementById("checkout").scrollIntoView({
     behavior: "smooth"
   });
+}
 
+function updateSummary() {
   let summary = "";
-  let total = 0;
-
   cart.forEach(item => {
-    let subtotal = item.price * item.quantity;
-    summary += item.name + " x " + item.quantity +
-      " = ₱" + subtotal.toLocaleString("en-PH") + "\n";
-    total += subtotal;
+    summary += `${item.name} × ${item.quantity} = ${peso(item.price * item.quantity)}\n`;
   });
+
+  const subtotal = getSubtotal();
+  const fee = getDeliveryFee();
+
+  summary += `\nSubtotal: ${peso(subtotal)}\n`;
+  summary += `Delivery Fee: ${peso(fee)}\n`;
 
   document.getElementById("checkoutSummary").innerText = summary;
   document.getElementById("checkoutTotal").innerText =
-    "Total: ₱" + total.toLocaleString("en-PH");
+    "Total: " + peso(subtotal + fee);
 }
 
-function submitDemoOrder() {
-  let name = document.getElementById("customerName").value.trim();
-  let phone = document.getElementById("customerPhone").value.trim();
-  let address = document.getElementById("customerAddress").value.trim();
+function changeOrderType() {
+  const delivery = document.getElementById("orderType").value === "Delivery";
 
-  if (!name || !phone || !address) {
-    alert("Please complete all customer details.");
+  document.getElementById("deliveryFields").style.display = delivery ? "block" : "none";
+  document.getElementById("pickupMessage").style.display = delivery ? "none" : "block";
+
+  document.getElementById("customerAddress").required = delivery;
+  document.getElementById("rider").required = delivery;
+
+  updateSummary();
+}
+
+function changePayment() {
+  document.getElementById("gcashBox").style.display = "block";
+}
+
+function previewReceipt() {
+  const file = document.getElementById("paymentReceipt").files[0];
+  const preview = document.getElementById("receiptPreview");
+
+  if (!file) {
+    preview.style.display = "none";
+    preview.src = "";
     return;
   }
 
-  alert("Thank you, " + name +
-    "! Your demo order has been successfully submitted.");
+  if (!file.type.startsWith("image/")) {
+    alert("Please upload an image file.");
+    document.getElementById("paymentReceipt").value = "";
+    return;
+  }
 
-  cart = [];
-  updateCart();
+  if (file.size > 5 * 1024 * 1024) {
+    alert("Please upload an image smaller than 5 MB.");
+    document.getElementById("paymentReceipt").value = "";
+    return;
+  }
 
-  document.getElementById("customerName").value = "";
-  document.getElementById("customerPhone").value = "";
-  document.getElementById("customerAddress").value = "";
-
-  document.getElementById("checkout").style.display = "none";
+  preview.src = URL.createObjectURL(file);
+  preview.style.display = "block";
 }
 
+function submitOrder() {
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const orderType = document.getElementById("orderType").value;
+  const address = document.getElementById("customerAddress").value.trim();
+  const rider = document.getElementById("rider").value;
+  const receipt = document.getElementById("paymentReceipt").files[0];
+
+  if (!name || !phone) {
+    alert("Please complete your customer details.");
+    return;
+  }
+
+  if (orderType === "Delivery" && !address) {
+    alert("Please enter your delivery address.");
+    return;
+  }
+
+  if (!receipt) {
+    alert("Please upload your GCash payment screenshot.");
+    return;
+  }
+
+  let message = "MAISON CAFÉ ORDER\n\n";
+
+  cart.forEach(item => {
+    message += `${item.name} x ${item.quantity} = ${peso(item.price * item.quantity)}\n`;
+  });
+
+  const subtotal = getSubtotal();
+  const fee = getDeliveryFee();
+  const total = subtotal + fee;
+
+  message += `\nSubtotal: ${peso(subtotal)}\n`;
+  message += `Delivery Fee: ${peso(fee)}\n`;
+  message += `TOTAL: ${peso(total)}\n\n`;
+  message += `Customer: ${name}\n`;
+  message += `Contact: ${phone}\n`;
+  message += `Order Type: ${orderType}\n`;
+
+  if (orderType === "Delivery") {
+    message += `Address: ${address}\n`;
+    message += `Rider: ${rider}\n`;
+  }
+
+  message += "Payment: GCash\n";
+  message += "Payment Status: PENDING VERIFICATION\n";
+  message += `Receipt filename: ${receipt.name}\n\n`;
+  message += "Please verify the actual GCash payment before confirming this order.";
+
+  alert(
+    "ORDER SUMMARY READY!\n\n" +
+    message +
+    "\n\nThis is a preview only. The order and receipt have not been sent or saved."
+  );
+}
 </script>
-
-<body>
-
-<header>
-  <div class="logo">MAISON CAFÉ</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div style="display:inline-block;
-background:#c6a477;
-color:#21170f;
-padding:9px 18px;
-font-family:Arial,sans-serif;
-font-size:11px;
-letter-spacing:3px;
-margin-bottom:25px;">
-PORTFOLIO DEMO WEBSITE
-</div>
-    <p>AN ELEVATED COFFEE EXPERIENCE</p>
-    <h1>MAISON CAFÉ</h1>
-    <h2>Where Every Cup Tells a Story.</h2>
-    <a href="#menu" class="btn">EXPLORE OUR MENU</a>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1000" alt="Elegant coffee shop interior">
-  <div>
-    <div class="section-title" style="text-align:left">
-      <p>OUR STORY</p>
-    </div>
-    <h2>A Place to Slow Down.</h2>
-    <p>
-      At Maison Café, we believe coffee is more than
-      a drink. It is a moment of comfort, connection,
-      and inspiration. Every cup is thoughtfully
-      prepared using carefully selected ingredients
-      and a passion for exceptional coffee.
-    </p>
-  </div>
-</section>
-
-
-
-
-
-<section id="menu">
-  <div class="section-title">
-    <p>OUR SIGNATURE SELECTION</p>
-    <h2>Explore Our Menu</h2>
-    <p>Choose your favorites and enjoy every sip.</p>
-  </div>
-
-  <div class="menu-grid">
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700" alt="Espresso">
-      <h3>Classic Espresso</h3>
-      <p>Rich and Bold</p>
-      <h3>₱120</h3>
-      <input type="number" min="1" value="1" id="qty1" style="width:65px;padding:10px;margin:10px">
-      <button class="btn" onclick="addOrder('Classic Espresso',120,'qty1')">ADD TO ORDER</button>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700" alt="Iced Latte">
-      <h3>Signature Iced Latte</h3>
-      <p>Smooth and Creamy</p>
-      <h3>₱160</h3>
-      <input type="number" min="1" value="1" id="qty2" style="width:65px;padding:10px;margin:10px">
-      <button class="btn" onclick="addOrder('Signature Iced Latte',160,'qty2')">ADD TO ORDER</button>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=700" alt="Cappuccino">
-      <h3>Velvet Cappuccino</h3>
-      <p>Elegant and Comforting</p>
-      <h3>₱150</h3>
-      <input type="number" min="1" value="1" id="qty3" style="width:65px;padding:10px;margin:10px">
-      <button class="btn" onclick="addOrder('Velvet Cappuccino',150,'qty3')">ADD TO ORDER</button>
-    </div>
-    
-<!-- ICED MATCHA LATTE -->
-<div class="menu-card">
-  <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=700" alt="Iced Matcha Latte">
-  <h3>Iced Matcha Latte</h3>
-  <p>Creamy Japanese Matcha</p>
-  <h3>₱170</h3>
-  <input type="number" min="1" value="1" id="qty4" style="width:65px;padding:10px;margin:10px">
-  <button class="btn" onclick="addOrder('Iced Matcha Latte',170,'qty4')">ADD TO ORDER</button>
-</div>
-
-<!-- SPANISH LATTE -->
-<div class="menu-card">
-  <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700" alt="Spanish Latte">
-  <h3>Spanish Latte</h3>
-  <p>Rich Espresso and Sweet Milk</p>
-  <h3>₱180</h3>
-  <input type="number" min="1" value="1" id="qty5" style="width:65px;padding:10px;margin:10px">
-  <button class="btn" onclick="addOrder('Spanish Latte',180,'qty5')">ADD TO ORDER</button>
-</div>
-
-<!-- BUTTER CROISSANT -->
-<div class="menu-card">
-  <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700" alt="Butter Croissant">
-  <h3>Butter Croissant</h3>
-  <p>Flaky and Buttery Pastry</p>
-  <h3>₱95</h3>
-  <input type="number" min="1" value="1" id="qty6" style="width:65px;padding:10px;margin:10px">
-  <button class="btn" onclick="addOrder('Butter Croissant',95,'qty6')">ADD TO ORDER</button>
-</div>
-
-
-  </div>
-
-  <div style="max-width:600px;margin:45px auto;background:#21170f;color:white;padding:30px;text-align:center;">
-    <h2>Your Order</h2>
-    <div id="orderList" style="margin:20px 0;line-height:2;">
-      Your cart is empty.
-    </div>
-    <h3 id="total">Total: ₱0</h3>
-    <button class="btn" onclick="placeOrder()" style="margin-top:20px;border:0;cursor:pointer;">
-      PLACE MY ORDER
-    </button>
-    <p style="font-size:11px;margin-top:15px;color:#d9c7ad;">
-      Demo ordering system. Prices are sample prices.
-    </p>
-  </div>
-</section>
-
-
-  
-
-
-<section id="checkout" style="display:none; background:#f8f5ef;">
-  <div class="section-title">
-    <p>COMPLETE YOUR ORDER</p>
-    <h2>Customer Checkout</h2>
-  </div>
-
-  <div style="max-width:550px;margin:auto;background:white;padding:30px;">
-    <h3>Your Order Summary</h3>
-    <pre id="checkoutSummary" style="white-space:pre-wrap;margin:20px 0;"></pre>
-    <h3 id="checkoutTotal">Total: ₱0</h3>
-
-    <form onsubmit="event.preventDefault(); submitDemoOrder();">
-      <label>Customer Name</label>
-      <input id="customerName" type="text" required
-        placeholder="Enter your name"
-        style="width:100%;padding:13px;margin:10px 0 20px;">
-
-      <label>Contact Number</label>
-      <input id="customerPhone" type="tel" required
-        placeholder="09XXXXXXXXX"
-        style="width:100%;padding:13px;margin:10px 0 20px;">
-
-      <label>Delivery Address</label>
-      <textarea id="customerAddress" required
-        placeholder="Enter your complete address"
-        style="width:100%;padding:13px;margin:10px 0 20px;"></textarea>
-
-      <button type="submit" class="btn"
-        style="width:100%;border:0;cursor:pointer;">
-        SUBMIT DEMO ORDER
-      </button>
-    </form>
-  </div>
-</section>
-
-
-<section class="banner">
-  <h2>Make Every Moment Special.</h2>
-  <p>Your next favorite coffee is waiting for you.</p>
-  <a href="#contact" class="btn">VISIT US</a>
-</section>
-
-<section class="contact" id="contact">
-  <div class="section-title">
-    <p>COME SAY HELLO</p>
-    <h2>Visit Maison Café</h2>
-  </div>
-  
-
-<div style="margin-top:25px;">
-  <h3 style="margin-bottom:15px;">Find Our Café</h3>
-
-  <p style="margin-bottom:15px;">
-    📍 Davao City, Philippines
-  </p>
-
-  <iframe
-    src="https://maps.google.com/maps?q=Davao%20City%2C%20Philippines&output=embed"
-    width="100%"
-    height="300"
-    style="border:0;"
-    loading="lazy"
-    allowfullscreen>
-  </iframe>
-
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=Davao+City+Philippines"
-    target="_blank"
-    style="display:inline-block;background:#21170f;color:white;padding:14px 25px;text-decoration:none;margin-top:15px;">
-    OPEN IN GOOGLE MAPS
-  </a>
-</div>
-
-
-  <p>📞 +63 900 000 0000</p>
-  <p>✉️ hello@maisoncafe.com</p>
-  
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:25px;">
-
-<a href="tel:+639XXXXXXXXX"
-style="background:#21170f;color:white;padding:14px 24px;text-decoration:none;">
-Call Us
-</a>
-
-<a href="https://wa.me/639XXXXXXXXX"
-style="background:#25D366;color:white;padding:14px 24px;text-decoration:none;">
-WhatsApp
-</a>
-
-<a href="https://www.facebook.com/YOURPAGE"
-style="background:#1877F2;color:white;padding:14px 24px;text-decoration:none;">
-Facebook
-</a>
-
-</div>
-
-  <p>Monday – Sunday | 8:00 AM – 9:00 PM</p>
-</section>
-</main>
-
-
-<footer>
-  <h3>MAISON CAFÉ</h3>
-
-  <p>Where Every Cup Tells a Story.</p>
-
-  <p>
-    <a href="#home">Home</a> |
-    <a href="#about">About</a> |
-    <a href="#menu">Menu</a> |
-    <a href="#contact">Contact</a>
-  </p>
-
-  <p>📍 Davao City, Philippines</p>
-
-  
-    <p>
-  <a href="https://www.facebook.com/maisoncafe.demo" target="_blank">
-    Facebook
-  </a>
-  |
-  <a href="https://www.instagram.com/maisoncafe.demo" target="_blank">
-    Instagram
-  </a>
-</p>
-  
-
-  <p>© 2026 Maison Café. All Rights Reserved.</p>
-  <p>Portfolio Demo Website</p>
-</footer>
-
-
 </body>
 </html>
+
